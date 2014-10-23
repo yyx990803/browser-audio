@@ -1,8 +1,10 @@
 # Browser Audio
 
-A simple cross-browser audio player. Uses Web Audio when possible (except in Firefox where HTML5 `<audio>` works better) and falls back to HTML5 `<audio>`. Supports IE10+.
+A simple cross-browser audio player. Uses Web Audio when possible (except in Firefox where HTML5 `<audio>` works better) and falls back to HTML5 `<audio>`. Supports IE10+ and most mobile browsers.
 
-The file formats supported depends on the underlying Browser implementation, but `.mp3` should work in most situations.
+The file formats supported depend on the underlying Browser implementation, but `.mp3` should work in most situations.
+
+Note this library is only intended for playing multiple small sound effects, there's no streaming support for large files.
 
 ## Usage
 
@@ -16,7 +18,7 @@ var file = audio.create('url-to-file.mp3')
 
 file.play() // plays when loaded
 // or...
-// files are instances of EventEmitters
+// files are instances of EventEmitter
 file.once('load', file.play.bind(file))
 
 // other methods/properties:
